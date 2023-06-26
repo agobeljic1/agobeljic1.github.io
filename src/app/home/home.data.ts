@@ -64,36 +64,36 @@ export const clients: MarqueeItem[] = [
   {
     src: 'ericsson.svg',
     alt: 'Ericsson',
-    href: 'https:/www.ericsson.com',
+    href: 'https://www.ericsson.com',
   },
   {
     src: 'rag.svg',
     alt: 'RAG',
-    href: 'https:/www.rag.de',
+    href: 'https://www.rag.de',
   },
   {
     src: 'gravitee.svg',
     alt: 'Gravitee',
-    href: 'https:/www.gravitee.io',
+    href: 'https://www.gravitee.io',
   },
   {
     src: 'yum.svg',
     alt: 'Yum!',
-    href: 'https:/www.yum.com',
+    href: 'https://www.yum.com',
   },
   {
     src: 'solargis.svg',
     alt: 'Solargis',
-    href: 'https:/www.solargis.com',
+    href: 'https://www.solargis.com',
   },
   {
     src: 'toptal.svg',
     alt: 'Toptal',
-    href: 'https:/www.toptal.com',
+    href: 'https://www.toptal.com',
   },
   {
     src: 'insightful.svg',
     alt: 'Insightful',
-    href: 'https:/www.insightful.io',
+    href: 'https://www.insightful.io',
   },
 ];
