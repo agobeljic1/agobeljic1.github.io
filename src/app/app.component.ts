@@ -1,20 +1,39 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { fade } from './animations/fade';
-import { routerFade } from './animations/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [fade, routerFade],
 })
-export class AppComponent {
-  isLoading = false;
+export class AppComponent implements OnInit, OnDestroy {
+  titles = ['✋', 'ADNAN GOBELJIC', 'PORTFOLIO', 'OPEN 2 WORK', '😇'];
+  currentIndex = 0;
+  isMobile = false;
 
-  constructor() {}
+  titleChangeInterval = null;
 
-  getAnimationData(outlet: RouterOutlet) {
-    return outlet.isActivated ? outlet.activatedRoute : '';
+  constructor(private titleService: Title) {}
+
+  ngOnInit(): void {
+    this.handleTitleChange();
+    this.isMobile =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.titleChangeInterval);
+  }
+
+  handleTitleChange() {
+    this.titleChangeInterval = setInterval(() => {
+      this.titleService.setTitle(this.titles[this.currentIndex]);
+      this.currentIndex++;
+      if (this.currentIndex == this.titles.length) {
+        this.currentIndex = 0;
+      }
+    }, 1000);
   }
 }

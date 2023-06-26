@@ -1,3 +1,104 @@
-<p>
-  home works!
-</p>
+<app-landing></app-landing>
+<app-section [title]="'ABOUT'">
+  <div class="introduction">
+    <h2 class="mt">INTRODUCTION</h2>
+    <p class="body-1">
+      Hello!
+      <span mouseTracking>Adnan Gobeljic</span>, a full-stack software engineer,
+      medal-decorated math olympian and Msc. who is eager to taste more of the
+      professional IT world. 26 years of life and over 3 years of development
+      experience, I bring a combination of skills, passion, and a strong desire
+      to excel.
+      <br />
+      <br />
+      Highly motivated; quick to learn and eager to prove myself by taking on
+      challenging tasks. To learn more about my qualifications and experience,
+      please feel free to download my CV/Resume or check it out
+      <a
+        href="https://www.toptal.com/resume/adnan-gobeljic"
+        target="_blank"
+        rel="noopener noreferrer"
+        mouseTracking
+        ><span>online</span> </a
+      >. <br /><br />
+      Excited about the prospect of contributing to impactful projects in the
+      Javascript ecosystem and leveraging my skills to deliver exceptional
+      results. If you have any further questions or would like to discuss
+      potential opportunities, please don't hesitate to reach out via
+      <a
+        href="https://www.linkedin.com/in/adnan-gobeljic/"
+        target="_blank"
+        rel="noopener noreferrer"
+        mouseTracking
+        ><span>LinkedIn</span>
+      </a>
+      or
+      <a href="mailto:adnangobeljic997@gmail.com" mouseTracking>
+        <span>Email</span> </a
+      >.
+    </p>
+    <a
+      mouseTracking
+      mat-fab
+      extended
+      color="primary"
+      href="assets/Adnan-Gobeljic-CV.pdf"
+      download="Adnan-Gobeljic-CV.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <mat-icon>download</mat-icon>
+      CV / Resume
+    </a>
+
+    <h2 class="mt">SKILLS</h2>
+
+    <div class="skills icons">
+      <img
+        class="skills__skill icons__icon"
+        [src]="iconsFolder + skill.src"
+        [alt]="skill.alt"
+        *ngFor="let skill of skills"
+        [matTooltip]="skill.alt"
+        matTooltipClass="tooltip--dark"
+        loading="lazy"
+      />
+    </div>
+
+    <h2 class="mt">SOME BRANDS I'VE WORKED FOR</h2>
+
+    <div class="clients icons">
+      <ng-container *ngFor="let client of clients">
+        <a [href]="client.href" target="_blank" rel="noopener noreferrer">
+          <img
+            class="clients__client icons__icon"
+            [src]="clientsFolder + client.src"
+            [alt]="client.alt"
+            [matTooltip]="client.alt"
+            matTooltipClass="tooltip--dark"
+          />
+        </a>
+      </ng-container>
+    </div>
+  </div>
+</app-section>
+
+<app-marquee></app-marquee>
+
+<app-section [title]="'WORK'">
+  <p class="body-1 mt">
+    Please note that the portfolio displayed here represents only a portion of
+    my work. Due to non-disclosure agreements (<span mouseTracking>NDA</span>)
+    with certain clients and projects, I am unable to showcase the complete
+    range of my experience.
+  </p>
+  <app-projects></app-projects>
+</app-section>
+
+<app-marquee></app-marquee>
+
+<footer>
+  <app-section>
+    <span>&copy; 2023 Adnan Gobeljic</span>
+  </app-section>
+</footer>
