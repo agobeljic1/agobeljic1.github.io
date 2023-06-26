@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320.001" height="121.907" viewBox="0 0 320.001 121.907">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_1511" data-name="Rechteck 1511" width="320" height="121.907" transform="translate(0 0)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Gruppe_2102" data-name="Gruppe 2102" transform="translate(13938 3992)">
+    <rect id="Rechteck_1505" data-name="Rechteck 1505" width="99.622" height="5.701" transform="translate(-13717.621 -3875.794)" fill="#fd0"/>
+    <rect id="Rechteck_1506" data-name="Rechteck 1506" width="99.622" height="5.701" transform="translate(-13827.844 -3875.794)" fill="#e30613"/>
+    <rect id="Rechteck_1507" data-name="Rechteck 1507" width="99.622" height="5.701" transform="translate(-13938 -3875.794)"/>
+    <rect id="Rechteck_1508" data-name="Rechteck 1508" width="99.622" height="99.622" transform="translate(-13717.621 -3992)"/>
+    <rect id="Rechteck_1509" data-name="Rechteck 1509" width="99.622" height="99.622" transform="translate(-13938 -3992)"/>
+    <rect id="Rechteck_1510" data-name="Rechteck 1510" width="99.622" height="99.622" transform="translate(-13827.842 -3992)"/>
+    <g id="Gruppe_2090" data-name="Gruppe 2090" transform="translate(-13938 -3992)" clip-path="url(#clip-path)">
+      <path id="Pfad_1100" data-name="Pfad 1100" d="M151.789,17.725a9.382,9.382,0,0,0-9.381-9.381H98.167a9.379,9.379,0,0,0-9.381,9.381V53.481a9.376,9.376,0,0,0,9.381,9.378h44.242a9.38,9.38,0,0,0,9.381-9.378V31.594H119.8v9.381h20.17V53.481H100.594V17.725h39.379v5.8h11.816Z" transform="translate(149.856 14.083)" fill="#fff"/>
+      <path id="Pfad_1101" data-name="Pfad 1101" d="M56.084,43.18A9.382,9.382,0,0,0,65.465,33.8V17.726a9.381,9.381,0,0,0-9.381-9.383H7.37V62.86H19.183V17.718H51.305a2.347,2.347,0,0,1,2.346,2.346V31.453A2.347,2.347,0,0,1,51.305,33.8H31.534V43.18L53.652,62.922H70.2L46.811,43.18Z" transform="translate(12.439 14.082)" fill="#fff"/>
+      <path id="Pfad_1102" data-name="Pfad 1102" d="M70.383,41.7l11.9-22.806L94.2,41.7Zm34.864,21.161h13.721L88.2,8.344H76.385L45.612,62.861H59.336l6.15-11.781H99.1Z" transform="translate(76.985 14.083)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
