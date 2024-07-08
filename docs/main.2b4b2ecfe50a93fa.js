@@ -32377,7 +32377,7 @@
                     Se(),
                     $e(
                       9,
-                      ", a full-stack software engineer, member of Toptal network, medal-decorated math olympian and Msc. who is eager to taste more of the professional IT world. 27 years of life and over 4 years of development experience, I bring a combination of skills, passion, and a strong desire to excel. "
+                      ", a full-stack software engineer, a member of Toptal network, medal-decorated math olympian and Msc. who is eager to taste more of the professional IT world. 27 years of life and over 4 years of development experience, I bring a combination of skills, passion, and a strong desire to excel. "
                     ),
                     Ke(10, "br")(11, "br"),
                     $e(
