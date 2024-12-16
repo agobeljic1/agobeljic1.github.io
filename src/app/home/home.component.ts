@@ -14,6 +14,8 @@ export class HomeComponent implements AfterViewInit {
   clientsFolder = 'assets/brands/';
   skills: MarqueeItem[] = skills;
   clients: MarqueeItem[] = clients;
+  
+  currentYear: number = new Date().getFullYear();
 
   constructor(private ElementRef: ElementRef) {}
 
