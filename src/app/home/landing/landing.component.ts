@@ -17,6 +17,7 @@ export class LandingComponent implements AfterViewInit {
     this.setParallax();
     this.injectStars();
     this.cloudsAnimation();
+    this.setupScrollIndicatorVisibility();
   }
 
   setParallax() {
@@ -27,7 +28,6 @@ export class LandingComponent implements AfterViewInit {
     const houses = document.querySelectorAll('.house');
     const headline = document.querySelectorAll('.headline');
     const floor = document.querySelector('.floor');
-
 
     gsap.to(headline, {
       top: '100%',
@@ -148,5 +148,32 @@ export class LandingComponent implements AfterViewInit {
   random(range: number, unit: string) {
     let randNum = Math.floor(Math.random() * range) + 1;
     return `${randNum}${unit}`;
+  }
+
+  scrollToNext() {
+    const nextSection = document.querySelector('app-section');
+    if (nextSection && 'scrollIntoView' in nextSection) {
+      (nextSection as HTMLElement).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }
+
+  setupScrollIndicatorVisibility() {
+    const indicator: HTMLElement | null =
+      this.elRef.nativeElement.querySelector('.scroll-indicator');
+    if (!indicator) return;
+
+    const updateVisibility = () => {
+      if (window.scrollY > 10) {
+        indicator.classList.add('scroll-indicator--hidden');
+      } else {
+        indicator.classList.remove('scroll-indicator--hidden');
+      }
+    };
+
+    updateVisibility();
+    window.addEventListener('scroll', updateVisibility, { passive: true });
   }
 }

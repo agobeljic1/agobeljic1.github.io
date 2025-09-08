@@ -1,4 +1,37 @@
 <!-- Headline -->
+<button
+  class="scroll-indicator"
+  (click)="scrollToNext()"
+  aria-label="Scroll down"
+>
+  <span class="scroll-indicator__text">Scroll down</span>
+  <span class="scroll-indicator__icon" aria-hidden="true">▼</span>
+
+  <!-- optional mouse shape -->
+  <span class="scroll-indicator__mouse">
+    <span class="scroll-indicator__wheel"></span>
+  </span>
+
+  <span class="visually-hidden">Scroll down for more</span>
+
+  <svg
+    class="scroll-indicator__chevrons"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path d="M12 16l-6-6h12z" fill="currentColor"></path>
+  </svg>
+
+  <span class="scroll-indicator__hint">for more</span>
+
+  <span class="sr-only">Scroll down</span>
+
+  <span class="scroll-indicator__bounce"></span>
+
+  <span class="scroll-indicator__a11y" aria-hidden="true"></span>
+
+  <span class="scroll-indicator__pulse" aria-hidden="true"></span>
+</button>
 <svg
   viewBox="0 0 300 300"
   xmlns="http://www.w3.org/2000/svg"
