@@ -1,58 +1,73 @@
 import { MarqueeItem } from '../interfaces/marquee-item';
 
 export const skills = [
-  {
-    src: 'html.svg',
-    alt: 'HTML 5',
-  },
-  {
-    src: 'css.svg',
-    alt: 'CSS 3',
-  },
-  {
-    src: 'sass.svg',
-    alt: 'SASS',
-  },
-  {
-    src: 'js.svg',
-    alt: 'JavaScript',
-  },
+  // {
+  //   src: 'html.svg',
+  //   alt: 'HTML 5',
+  // },
+  // {
+  //   src: 'css.svg',
+  //   alt: 'CSS 3',
+  // },
+
   {
     src: 'angular.svg',
     alt: 'Angular',
+  },
+  {
+    src: 'react.svg',
+    alt: 'React',
+  },
+  { src: 'python.png', alt: 'Python' },
+  { src: 'fastapi.svg', alt: 'FastAPI', invert: true },
+
+  {
+    src: 'nodejs.svg',
+    alt: 'Node.js',
+  },
+  {
+    src: 'nestjs.webp',
+    alt: 'NestJS',
+  },
+  {
+    src: 'typescript.png',
+    alt: 'Typescript',
   },
   {
     src: 'mysql.svg',
     alt: 'MySQL',
   },
   {
-    src: 'react.svg',
-    alt: 'React',
-  },
-  {
-    src: 'redux.svg',
-    alt: 'Redux',
-  },
-  {
-    src: 'java.svg',
-    alt: 'Java',
-  },
-  {
     src: 'mongodb.svg',
     alt: 'MongoDB',
   },
-  {
-    src: 'ngrx.svg',
-    alt: 'Ngrx',
-  },
-  {
-    src: 'nodejs.svg',
-    alt: 'Node.js',
-  },
-  {
-    src: 'spring-boot.svg',
-    alt: 'Spring Boot',
-  },
+  // {
+  //   src: 'sass.svg',
+  //   alt: 'SASS',
+  // },
+  // {
+  //   src: 'js.svg',
+  //   alt: 'JavaScript',
+  // },
+
+  // {
+  //   src: 'redux.svg',
+  //   alt: 'Redux',
+  // },
+  // {
+  //   src: 'java.svg',
+  //   alt: 'Java',
+  // },
+
+  // {
+  //   src: 'ngrx.svg',
+  //   alt: 'Ngrx',
+  // },
+
+  // {
+  //   src: 'spring-boot.svg',
+  //   alt: 'Spring Boot',
+  // },
 ];
 
 export const clients: MarqueeItem[] = [
@@ -60,6 +75,11 @@ export const clients: MarqueeItem[] = [
     src: 'bmw.svg',
     alt: 'BMW',
     href: 'https://www.bmw.com',
+  },
+  {
+    src: 'usa.png',
+    alt: 'USA Government',
+    href: 'https://wa.gov/',
   },
   {
     src: 'ericsson.svg',

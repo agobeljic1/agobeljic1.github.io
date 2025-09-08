@@ -7,7 +7,7 @@ export const projects = [
   {
     name: 'Wfhomie',
     src: 'assets/projects/wfhomie.png',
-    link: 'https://www.wfhomie.com/',
+    link: 'https://www.goco.io/',
   },
   {
     name: 'Solargis',
@@ -17,7 +17,7 @@ export const projects = [
   {
     name: 'Bloola',
     src: 'assets/projects/bloola.png',
-    link: 'https://web-dev01.bloola.me',
+    link: 'https://www.bloola.com/',
   },
   {
     name: 'Insightful',
@@ -27,6 +27,6 @@ export const projects = [
   {
     name: 'Gravitee',
     src: 'assets/projects/gravitee.jpeg',
-    link: 'https://apim-3-19-x-console.team-apim.gravitee.dev/#!/login',
+    link: 'https://www.gravitee.io/',
   },
 ];

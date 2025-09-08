@@ -25127,6 +25127,7 @@
         hA() && U.registerPlugin(ge);
       const n5 = [
           { src: "html.svg", alt: "HTML 5" },
+          { src: "python.png", alt: "Python" },
           { src: "css.svg", alt: "CSS 3" },
           { src: "sass.svg", alt: "SASS" },
           { src: "js.svg", alt: "JavaScript" },
