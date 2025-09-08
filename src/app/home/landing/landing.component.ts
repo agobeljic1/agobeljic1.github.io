@@ -18,6 +18,7 @@ export class LandingComponent implements AfterViewInit {
     this.injectStars();
     this.cloudsAnimation();
     this.setupScrollIndicatorVisibility();
+    this.setupScrollIndicatorFade();
   }
 
   setParallax() {
@@ -175,5 +176,26 @@ export class LandingComponent implements AfterViewInit {
 
     updateVisibility();
     window.addEventListener('scroll', updateVisibility, { passive: true });
+  }
+
+  setupScrollIndicatorFade() {
+    const indicator: HTMLElement | null =
+      this.elRef.nativeElement.querySelector('.scroll-indicator');
+    if (!indicator) return;
+
+    const thresholdPx = 180;
+
+    const onScroll = () => {
+      const y = Math.min(window.scrollY, thresholdPx);
+      const progress = y / thresholdPx;
+      const opacity = 1 - progress;
+      const translateY = `${6 + progress * 12}px`;
+
+      indicator.style.opacity = `${opacity}`;
+      indicator.style.setProperty('--indicator-ty', translateY);
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 }

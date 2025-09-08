@@ -10,6 +10,8 @@ export const skills = [
   //   alt: 'CSS 3',
   // },
 
+  { src: 'python.png', alt: 'Python' },
+  { src: 'fastapi.svg', alt: 'FastAPI', invert: true },
   {
     src: 'angular.svg',
     alt: 'Angular',
@@ -18,9 +20,6 @@ export const skills = [
     src: 'react.svg',
     alt: 'React',
   },
-  { src: 'python.png', alt: 'Python' },
-  { src: 'fastapi.svg', alt: 'FastAPI', invert: true },
-
   {
     src: 'nodejs.svg',
     alt: 'Node.js',
