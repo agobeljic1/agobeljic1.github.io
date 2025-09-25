@@ -12,6 +12,7 @@ export const skills = [
 
   { src: 'python.png', alt: 'Python' },
   { src: 'fastapi.svg', alt: 'FastAPI', invert: true },
+  { src: 'aws.png', alt: 'AWS' },
   {
     src: 'angular.svg',
     alt: 'Angular',
