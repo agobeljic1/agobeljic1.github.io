@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -9,8 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ContactComponent {
   contactForm: FormGroup;
   submitted = false;
+  isSubmitting = false;
+  errorMessage = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -20,16 +23,29 @@ export class ContactComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
-      console.log('Form Submitted', this.contactForm.value);
-      this.submitted = true;
-      this.contactForm.reset();
-      Object.keys(this.contactForm.controls).forEach(key => {
-        this.contactForm.get(key)?.setErrors(null);
-      });
+      this.isSubmitting = true;
+      this.errorMessage = '';
       
-      setTimeout(() => {
-        this.submitted = false;
-      }, 5000);
+      this.http.post('https://mailing-sender.onrender.com/contact-adnangobeljic', this.contactForm.value, { responseType: 'text' })
+        .subscribe({
+          next: () => {
+            this.submitted = true;
+            this.isSubmitting = false;
+            this.contactForm.reset();
+            Object.keys(this.contactForm.controls).forEach(key => {
+              this.contactForm.get(key)?.setErrors(null);
+            });
+            
+            setTimeout(() => {
+              this.submitted = false;
+            }, 5000);
+          },
+          error: (error) => {
+            console.error('Error sending message', error);
+            this.errorMessage = 'Failed to send message. Please try again later.';
+            this.isSubmitting = false;
+          }
+        });
     }
   }
 }
