@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef } from '@angular/core';
 import { MarqueeItem } from '../interfaces/marquee-item';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { clients, skills } from './home.data';
+import { Certification, certifications, clients, skills } from './home.data';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +14,7 @@ export class HomeComponent implements AfterViewInit {
   clientsFolder = 'assets/brands/';
   skills: MarqueeItem[] = skills;
   clients: MarqueeItem[] = clients;
+  certifications: Certification[] = certifications;
   
   currentYear: number = new Date().getFullYear();
 

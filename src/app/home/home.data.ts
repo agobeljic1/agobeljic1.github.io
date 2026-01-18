@@ -1,5 +1,11 @@
 import { MarqueeItem } from '../interfaces/marquee-item';
 
+export type Certification = {
+  dateRange: string;
+  title: string;
+  issuer: string;
+};
+
 export const skills = [
   // {
   //   src: 'html.svg',
@@ -115,5 +121,18 @@ export const clients: MarqueeItem[] = [
     src: 'insightful.svg',
     alt: 'Insightful',
     href: 'https://www.insightful.io',
+  },
+];
+
+export const certifications: Certification[] = [
+  {
+    dateRange: 'September 2025 - September 2028',
+    title: 'AWS Certified Developer - Associate',
+    issuer: 'Amazon Web Services',
+  },
+  {
+    dateRange: 'March 2025 - Present',
+    title: 'eCommerce SEO and AI Specialist',
+    issuer: 'Seolaxy',
   },
 ];

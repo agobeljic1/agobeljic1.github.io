@@ -82,6 +82,17 @@
   </div>
 </app-section>
 
+<app-section class="certifications-section">
+  <h2 class="mt">CERTIFICATIONS</h2>
+  <div class="certifications">
+    <div class="certifications__item" *ngFor="let cert of certifications">
+      <div class="certifications__date">{{ cert.dateRange }}</div>
+      <div class="certifications__title">{{ cert.title }}</div>
+      <div class="certifications__issuer">{{ cert.issuer }}</div>
+    </div>
+  </div>
+</app-section>
+
 <app-marquee></app-marquee>
 
 <app-section [title]="'WORK'">
