@@ -1,0 +1,125 @@
+:host {
+  display: block;
+}
+
+.contact-card {
+  background-color: #424242;
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
+  margin-top: 24px;
+  border-left: 3px solid #c2185b; /* Matching the theme accent */
+}
+
+.contact-intro {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  mat-form-field {
+    flex: 1;
+    min-width: 250px;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.submit-btn {
+  padding: 8px 24px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  background-color: #c2185b !important; /* Force primary color if not picked up */
+  color: white !important;
+  
+  mat-icon {
+    margin-left: 8px;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+  }
+}
+
+.success-message {
+  color: #69f0ae;
+  margin-top: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  mat-icon {
+    color: #69f0ae;
+  }
+}
+
+/* Material Design Overrides for Dark Theme */
+::ng-deep {
+  .contact-card {
+    .mat-mdc-form-field {
+      .mdc-text-field {
+        background-color: transparent !important;
+        
+        &--outlined {
+          --mdc-outlined-text-field-outline-color: rgba(255, 255, 255, 0.3);
+          --mdc-outlined-text-field-focus-outline-color: #c2185b;
+          --mdc-outlined-text-field-label-text-color: rgba(255, 255, 255, 0.6);
+          --mdc-outlined-text-field-focus-label-text-color: #c2185b;
+          --mdc-outlined-text-field-input-text-color: rgba(255, 255, 255, 0.9);
+          --mdc-outlined-text-field-caret-color: #c2185b;
+        }
+
+        /* Legacy/Standard Material overrides if MDC not fully used yet */
+        .mat-form-field-outline {
+          color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .mat-form-field-label {
+          color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .mat-input-element {
+          color: white;
+          caret-color: #c2185b;
+        }
+        
+        &.mat-focused {
+          .mat-form-field-outline {
+            color: #c2185b;
+          }
+          .mat-form-field-label {
+            color: #c2185b;
+          }
+        }
+      }
+
+      /* Fix for outline label background overlapping transparent input */
+      .mdc-notched-outline__notch {
+        border-right: none;
+        border-left: none;
+      }
+    }
+  }
+}

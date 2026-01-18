@@ -1,0 +1,52 @@
+<app-section>
+  <h2 class="mt">CONTACT ME</h2>
+  
+  <div class="contact-card">
+    <p class="contact-intro">
+      Have a question or want to work together? Leave me a message!
+    </p>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" placeholder="Your Name">
+          <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="Your Email">
+          <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+            Email is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="message" rows="6" placeholder="Your Message"></textarea>
+        <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+          Message is required
+        </mat-error>
+      </mat-form-field>
+
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid" mouseTracking class="submit-btn">
+          SEND MESSAGE
+          <mat-icon>send</mat-icon>
+        </button>
+      </div>
+
+      <p *ngIf="submitted" class="success-message">
+        <mat-icon>check_circle</mat-icon>
+        Message sent successfully!
+      </p>
+    </form>
+  </div>
+</app-section>

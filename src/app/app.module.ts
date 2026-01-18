@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RoutingModule } from './modules/routing.module';
@@ -13,6 +14,7 @@ import { ProjectsComponent } from './home/projects/projects.component';
 import { MouseComponent } from './UI/mouse/mouse.component';
 import { MouseTrackingDirective } from './directives/mouseTracking.directive';
 import { ProjectDetailsDialogComponent } from './home/projects/project-details-dialog/project-details-dialog.component';
+import { ContactComponent } from './home/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +28,14 @@ import { ProjectDetailsDialogComponent } from './home/projects/project-details-d
     ProjectDetailsDialogComponent,
     MouseComponent,
     MouseTrackingDirective,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     RoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ReactiveFormsModule,
   ],
   bootstrap: [AppComponent],
 })
