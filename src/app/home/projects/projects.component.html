@@ -3,9 +3,7 @@
     <div class="projects__project__wrap">
       <div class="projects__project__img">
         <img [src]="project.src" alt="" loading="lazy" />
-      </div>
-      <div class="projects__project__wrap__inner">
-        <h4 class="projects__project__title">{{ project.name }}</h4>
+
         <a
           mouseTracking
           *ngIf="project.link"
@@ -20,6 +18,26 @@
         >
           <mat-icon>open_in_new</mat-icon>
         </a>
+      </div>
+      <div class="projects__project__wrap__inner">
+        <div class="projects__project__header">
+          <h4 class="projects__project__title">{{ project.name }}</h4>
+
+          <div class="projects__project__actions">
+            <button
+              mouseTracking
+              mat-icon-button
+              type="button"
+              class="projects__project__action projects__project__action--info"
+              [matTooltip]="'Project details'"
+              matTooltipClass="tooltip--dark"
+              [matTooltipPosition]="'above'"
+              (click)="openDetails(project)"
+            >
+              <mat-icon>info_outline</mat-icon>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

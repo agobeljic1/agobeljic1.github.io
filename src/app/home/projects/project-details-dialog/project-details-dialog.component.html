@@ -1,0 +1,57 @@
+<div class="dialog">
+  <div class="dialog__header">
+    <h2 class="dialog__title">{{ data.name }}</h2>
+
+    <button
+      mat-icon-button
+      type="button"
+      aria-label="Close"
+      (click)="close()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="dialog__content">
+    <p class="dialog__description" *ngIf="data.details?.description">
+      {{ data.details.description }}
+    </p>
+
+    <div class="dialog__section" *ngIf="data.details?.role">
+      <div class="dialog__label">Role</div>
+      <div class="dialog__value">{{ data.details.role }}</div>
+    </div>
+
+    <div class="dialog__section" *ngIf="data.details?.stack?.length">
+      <div class="dialog__label">Tech</div>
+      <div class="dialog__value">{{ data.details.stack.join(', ') }}</div>
+    </div>
+
+    <div class="dialog__section" *ngIf="data.details?.highlights?.length">
+      <div class="dialog__label">Highlights</div>
+      <ul class="dialog__list">
+        <li *ngFor="let item of data.details.highlights">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dialog__actions">
+    <a
+      *ngIf="data.link"
+      mouseTracking
+      mat-stroked-button
+      class="dialog__link"
+      [href]="data.link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Open site
+      <mat-icon>open_in_new</mat-icon>
+    </a>
+
+    <button mat-raised-button color="primary" type="button" (click)="close()">
+      Close
+    </button>
+  </div>
+</div>
+

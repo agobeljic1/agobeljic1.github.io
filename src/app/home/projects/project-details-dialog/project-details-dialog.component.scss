@@ -1,0 +1,75 @@
+:host {
+  display: block;
+}
+
+.dialog {
+  width: min(720px, 92vw);
+  padding: 16px 16px 12px;
+  color: #fff;
+  background: #303030;
+  border-radius: 12px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  &__content {
+    margin-top: 8px;
+  }
+
+  &__description {
+    margin: 0 0 16px;
+    opacity: 0.92;
+  }
+
+  &__section {
+    margin-top: 12px;
+  }
+
+  &__label {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 6px;
+  }
+
+  &__value {
+    opacity: 0.95;
+  }
+
+  &__list {
+    margin: 0;
+    padding-left: 18px;
+    opacity: 0.95;
+  }
+
+  &__actions {
+    margin-top: 18px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    mat-icon {
+      margin-left: 6px;
+      font-size: 18px;
+      height: 18px;
+      width: 18px;
+      line-height: 18px;
+    }
+  }
+}
+

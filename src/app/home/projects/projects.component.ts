@@ -1,7 +1,9 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { projects } from './projects.data';
+import { Project, projects } from './projects.data';
+import { ProjectDetailsDialogComponent } from './project-details-dialog/project-details-dialog.component';
 
 @Component({
   selector: 'app-projects',
@@ -10,6 +12,8 @@ import { projects } from './projects.data';
 })
 export class ProjectsComponent implements AfterViewInit {
   projects = projects;
+
+  constructor(private dialog: MatDialog) {}
 
   ngAfterViewInit() {
     gsap.registerPlugin(ScrollTrigger);
@@ -25,6 +29,14 @@ export class ProjectsComponent implements AfterViewInit {
         end: 'center center',
         scrub: 2,
       },
+    });
+  }
+
+  openDetails(project: Project) {
+    this.dialog.open(ProjectDetailsDialogComponent, {
+      data: project,
+      autoFocus: false,
+      restoreFocus: true,
     });
   }
 }

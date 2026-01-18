@@ -12,6 +12,7 @@ import { MarqueeComponent } from './UI/marquee/marquee.component';
 import { ProjectsComponent } from './home/projects/projects.component';
 import { MouseComponent } from './UI/mouse/mouse.component';
 import { MouseTrackingDirective } from './directives/mouseTracking.directive';
+import { ProjectDetailsDialogComponent } from './home/projects/project-details-dialog/project-details-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MouseTrackingDirective } from './directives/mouseTracking.directive';
     SectionComponent,
     MarqueeComponent,
     ProjectsComponent,
+    ProjectDetailsDialogComponent,
     MouseComponent,
     MouseTrackingDirective,
   ],
