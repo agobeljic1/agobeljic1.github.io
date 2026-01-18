@@ -602,7 +602,7 @@ HomeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_6__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](7, "span", 4);
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](8, "Adnan Gobelji\u0107");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](9, ", a full-stack engineer with five years of experience, a member of Toptal network, medal-decorated math olympian, AWS certified developer associate and Msc. of computer science. ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](9, ", a full-stack engineer with six years of experience, a member of Toptal network, medal-decorated math olympian, AWS certified developer associate and Msc. of computer science. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](10, "br")(11, "br");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtext"](12, " Specialized in working with startups and scale-ups. I like fast paced environments. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](13, "br")(14, "br");
