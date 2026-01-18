@@ -23,6 +23,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  gap: 8px;
 }
 
 .form-row {
@@ -43,7 +44,6 @@
 .form-actions {
   display: flex;
   justify-content: flex-end;
-  margin-top: 8px;
 }
 
 .submit-btn {
@@ -78,48 +78,60 @@
 /* Material Design Overrides for Dark Theme */
 ::ng-deep {
   .contact-card {
+    /* Override MDC CSS Variables for Form Field */
     .mat-mdc-form-field {
+      --mdc-outlined-text-field-outline-color: rgba(255, 255, 255, 0.3);
+      --mdc-outlined-text-field-focus-outline-color: #c2185b;
+      --mdc-outlined-text-field-label-text-color: rgba(255, 255, 255, 0.6);
+      --mdc-outlined-text-field-focus-label-text-color: #c2185b;
+      --mdc-outlined-text-field-input-text-color: rgba(255, 255, 255, 0.9);
+      --mdc-outlined-text-field-caret-color: #c2185b;
+      
+      /* Force primary color variable to pink for this scope */
+      --mat-form-field-focus-color: #c2185b;
+      --mdc-theme-primary: #c2185b;
+
       .mdc-text-field {
         background-color: transparent !important;
-        
-        &--outlined {
-          --mdc-outlined-text-field-outline-color: rgba(255, 255, 255, 0.3);
-          --mdc-outlined-text-field-focus-outline-color: #c2185b;
-          --mdc-outlined-text-field-label-text-color: rgba(255, 255, 255, 0.6);
-          --mdc-outlined-text-field-focus-label-text-color: #c2185b;
-          --mdc-outlined-text-field-input-text-color: rgba(255, 255, 255, 0.9);
-          --mdc-outlined-text-field-caret-color: #c2185b;
-        }
-
-        /* Legacy/Standard Material overrides if MDC not fully used yet */
-        .mat-form-field-outline {
-          color: rgba(255, 255, 255, 0.3);
-        }
-        
-        .mat-form-field-label {
-          color: rgba(255, 255, 255, 0.6);
-        }
-        
-        .mat-input-element {
-          color: white;
-          caret-color: #c2185b;
-        }
-        
-        &.mat-focused {
-          .mat-form-field-outline {
-            color: #c2185b;
-          }
-          .mat-form-field-label {
-            color: #c2185b;
-          }
-        }
       }
-
-      /* Fix for outline label background overlapping transparent input */
+      
+      /* Fix for outline notch */
       .mdc-notched-outline__notch {
         border-right: none;
         border-left: none;
       }
+
+      /* Explicitly target the floating label when focused */
+      &.mat-focused .mdc-floating-label {
+        color: #c2185b !important;
+      }
+      
+      /* Target the label in general to be safe */
+      .mat-mdc-floating-label.mdc-floating-label--float-above {
+         color: #c2185b !important;
+      }
+    }
+
+    /* Fallback/Legacy Overrides just in case */
+    .mat-form-field.mat-focused {
+      .mat-form-field-label {
+        color: #c2185b !important;
+      }
+      .mat-form-field-ripple {
+        background-color: #c2185b !important;
+      }
+      .mat-form-field-outline-thick {
+        color: #c2185b !important;
+      }
+      
+      /* Specific for legacy outline */
+      .mat-form-field-outline {
+        color: #c2185b !important;
+      }
+    }
+    
+    .mat-input-element {
+      caret-color: #c2185b !important;
     }
   }
 }
