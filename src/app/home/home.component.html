@@ -83,11 +83,26 @@
 </app-section>
 
 <app-section class="certifications-section">
-  <h2 class="mt">CERTIFICATIONS</h2>
+  <h2 class="mt" style="margin-top: 24px;">CERTIFICATIONS</h2>
   <div class="certifications">
     <div class="certifications__item" *ngFor="let cert of certifications">
       <div class="certifications__date">{{ cert.dateRange }}</div>
-      <div class="certifications__title">{{ cert.title }}</div>
+      <a
+        *ngIf="cert.url; else certTitleNoLink"
+        mouseTracking
+        class="certifications__title certifications__title-link"
+        [href]="cert.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        [matTooltip]="'Open credential'"
+        matTooltipClass="tooltip--dark"
+      >
+        {{ cert.title }}
+        <mat-icon class="certifications__title-icon">open_in_new</mat-icon>
+      </a>
+      <ng-template #certTitleNoLink>
+        <div class="certifications__title">{{ cert.title }}</div>
+      </ng-template>
       <div class="certifications__issuer">{{ cert.issuer }}</div>
     </div>
   </div>
@@ -95,7 +110,7 @@
 
 <app-marquee></app-marquee>
 
-<app-section [title]="'WORK'">
+<app-section title="SOME PROJECTS I'VE WORKED ON">
   <p class="body-1 mt">
     Please note that the portfolio displayed here represents only a portion of
     my work. Due to non-disclosure agreements (<span mouseTracking>NDA</span>)

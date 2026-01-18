@@ -4,6 +4,7 @@ export type Certification = {
   dateRange: string;
   title: string;
   issuer: string;
+  url?: string;
 };
 
 export const skills = [
@@ -129,10 +130,12 @@ export const certifications: Certification[] = [
     dateRange: 'September 2025 - September 2028',
     title: 'AWS Certified Developer - Associate',
     issuer: 'Amazon Web Services',
+    url: 'https://www.credly.com/badges/61593d57-f223-49f4-89d6-ed13501c77e9',
   },
   {
     dateRange: 'March 2025 - Present',
     title: 'eCommerce SEO and AI Specialist',
     issuer: 'Seolaxy',
+    url: 'https://my.seolaxy.com/u/adnan-gobeljic',
   },
 ];

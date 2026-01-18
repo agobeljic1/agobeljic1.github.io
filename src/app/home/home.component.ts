@@ -22,6 +22,7 @@ export class HomeComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     const icons = document.querySelectorAll('.icons__icon');
+    const certs = document.querySelectorAll('.certifications__item');
     gsap.registerPlugin(ScrollTrigger);
     gsap.from(icons, {
       y: 50,
@@ -30,6 +31,19 @@ export class HomeComponent implements AfterViewInit {
       stagger: 0.2,
       scrollTrigger: {
         trigger: icons,
+        start: 'center bottom',
+        end: 'center center',
+        scrub: 2,
+      },
+    });
+
+    gsap.from(certs, {
+      y: 50,
+      ease: 'Power.3',
+      autoAlpha: 0,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: '.certifications',
         start: 'center bottom',
         end: 'center center',
         scrub: 2,
