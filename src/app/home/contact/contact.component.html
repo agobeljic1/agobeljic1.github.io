@@ -37,21 +37,23 @@
       </mat-form-field>
 
       <div class="form-actions">
+        <div class="status-messages">
+          <p *ngIf="submitted" class="success-message">
+            <mat-icon>check_circle</mat-icon>
+            Message sent successfully!
+          </p>
+          
+          <p *ngIf="errorMessage" class="error-message">
+            <mat-icon>error</mat-icon>
+            {{ errorMessage }}
+          </p>
+        </div>
+
         <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid || isSubmitting" mouseTracking class="submit-btn">
           {{ isSubmitting ? 'SENDING...' : 'SEND MESSAGE' }}
           <mat-icon>send</mat-icon>
         </button>
       </div>
-
-      <p *ngIf="submitted" class="success-message">
-        <mat-icon>check_circle</mat-icon>
-        Message sent successfully!
-      </p>
-      
-      <p *ngIf="errorMessage" class="error-message">
-        <mat-icon>error</mat-icon>
-        {{ errorMessage }}
-      </p>
     </form>
   </div>
 </app-section>
