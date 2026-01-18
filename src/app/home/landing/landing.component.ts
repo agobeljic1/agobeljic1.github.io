@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild,
+} from '@angular/core';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -7,9 +13,11 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss'],
 })
-export class LandingComponent implements AfterViewInit {
+export class LandingComponent implements AfterViewInit, OnDestroy {
   @ViewChild('sky', { static: false }) skyEl!: ElementRef;
   numberOfStars = 15;
+
+  private scrollIndicatorScrollHandler?: () => void;
 
   constructor(private elRef: ElementRef) {}
 
@@ -17,8 +25,13 @@ export class LandingComponent implements AfterViewInit {
     this.setParallax();
     this.injectStars();
     this.cloudsAnimation();
-    this.setupScrollIndicatorVisibility();
     this.setupScrollIndicatorFade();
+  }
+
+  ngOnDestroy(): void {
+    if (this.scrollIndicatorScrollHandler) {
+      window.removeEventListener('scroll', this.scrollIndicatorScrollHandler);
+    }
   }
 
   setParallax() {
@@ -161,29 +174,13 @@ export class LandingComponent implements AfterViewInit {
     }
   }
 
-  setupScrollIndicatorVisibility() {
-    const indicator: HTMLElement | null =
-      this.elRef.nativeElement.querySelector('.scroll-indicator');
-    if (!indicator) return;
-
-    const updateVisibility = () => {
-      if (window.scrollY > 10) {
-        indicator.classList.add('scroll-indicator--hidden');
-      } else {
-        indicator.classList.remove('scroll-indicator--hidden');
-      }
-    };
-
-    updateVisibility();
-    window.addEventListener('scroll', updateVisibility, { passive: true });
-  }
-
   setupScrollIndicatorFade() {
     const indicator: HTMLElement | null =
       this.elRef.nativeElement.querySelector('.scroll-indicator');
     if (!indicator) return;
 
-    const thresholdPx = 180;
+    // Fade out quickly as you start scrolling down from the hero.
+    const thresholdPx = Math.min(220, Math.round(window.innerHeight * 0.25));
 
     const onScroll = () => {
       const y = Math.min(window.scrollY, thresholdPx);
@@ -193,9 +190,16 @@ export class LandingComponent implements AfterViewInit {
 
       indicator.style.opacity = `${opacity}`;
       indicator.style.setProperty('--indicator-ty', translateY);
+      indicator.classList.toggle(
+        'scroll-indicator--hidden',
+        window.scrollY > thresholdPx
+      );
     };
 
     onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    this.scrollIndicatorScrollHandler = onScroll;
+    window.addEventListener('scroll', this.scrollIndicatorScrollHandler, {
+      passive: true,
+    });
   }
 }
