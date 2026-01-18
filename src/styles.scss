@@ -28,3 +28,13 @@ body {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
 }
+
+.project-details-dialog-panel {
+  max-width: 95vw !important;
+
+  .mdc-dialog__surface {
+    padding: 0 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+}

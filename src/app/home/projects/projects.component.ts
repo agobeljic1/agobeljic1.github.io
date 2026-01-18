@@ -37,6 +37,7 @@ export class ProjectsComponent implements AfterViewInit {
       data: project,
       autoFocus: false,
       restoreFocus: true,
+      panelClass: 'project-details-dialog-panel',
     });
   }
 }
