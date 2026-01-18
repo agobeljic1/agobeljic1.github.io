@@ -1,8 +1,18 @@
 export const projects = [
   {
-    name: 'Beats music',
-    src: 'assets/projects/beats-music.png',
-    link: 'https://beat-music-eight.vercel.app/',
+    name: 'Suzy',
+    src: 'assets/projects/suzy.jpg',
+    link: 'https://www.suzy.com/',
+  },
+  {
+    name: 'Witness AI',
+    src: 'assets/projects/witness-ai.webp',
+    link: 'https://witness.ai/',
+  },
+  {
+    name: 'Washington Government',
+    src: 'assets/projects/washington-government.webp',
+    link: 'https://irataxcredits.wa.gov/',
   },
   {
     name: 'Wfhomie',
@@ -28,5 +38,10 @@ export const projects = [
     name: 'Gravitee',
     src: 'assets/projects/gravitee.jpeg',
     link: 'https://www.gravitee.io/',
+  },
+  {
+    name: 'Arti Analytics DSML',
+    src: 'assets/projects/arti-analytics-dsml.jpeg',
+    link: 'https://artianalytics.com/',
   },
 ];

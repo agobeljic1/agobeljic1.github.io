@@ -22240,7 +22240,7 @@
             (this.titleService = t),
               (this.titles = [
                 "\u270b",
-                "ADNAN GOBELJIC",
+                "ADNAN GOBELJIĆ",
                 "PORTFOLIO",
                 "OPEN 2 WORK",
                 "\u{1f607}",
@@ -31866,7 +31866,7 @@
                 Te(0, "svg", 0),
                 Ke(1, "path", 1),
                 Te(2, "text", 2)(3, "textPath", 3),
-                $e(4, " Adnan Gobeljic . Full stack . Developer "),
+                $e(4, " Adnan Gobeljić . Full stack . Developer "),
                 Se()()(),
                 um(),
                 Ke(5, "div", 4, 5)(7, "img", 6)(8, "img", 7)(9, "app-asset", 8)(
@@ -32374,7 +32374,7 @@
                     Te(5, "p", 3),
                     $e(6, " Hello! "),
                     Te(7, "span", 4),
-                    $e(8, "Adnan Gobeljic"),
+                    $e(8, "Adnan Gobeljić"),
                     Se(),
                     $e(
                       9,
@@ -32438,7 +32438,7 @@
                     Se(),
                     Ke(48, "app-marquee"),
                     Te(49, "footer")(50, "app-section")(51, "span"),
-                    $e(52, "\xa9 2024 Adnan Gobeljic"),
+                    $e(52, "\xa9 2024 Adnan Gobeljić"),
                     Se()()()),
                     2 & t &&
                       (nt(1),
