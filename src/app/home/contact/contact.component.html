@@ -49,6 +49,11 @@
           </p>
         </div>
 
+        <a mat-stroked-button color="accent" href="mailto:adnan@adnangobeljic.com" class="email-btn" mouseTracking>
+          OR SEND EMAIL
+          <mat-icon>email</mat-icon>
+        </a>
+
         <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid || isSubmitting" mouseTracking class="submit-btn">
           {{ isSubmitting ? 'SENDING...' : 'SEND MESSAGE' }}
           <mat-icon>send</mat-icon>
